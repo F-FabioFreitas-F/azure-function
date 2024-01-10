@@ -6,7 +6,7 @@ from datetime import datetime
 app = func.FunctionApp()
 
 
-@app.schedule(schedule="0 0 12 * * *", arg_name="myTimer", run_on_startup=True,
+@app.schedule(schedule="0 0 12 * * *", arg_name="myTimer", run_on_startup=False,
               use_monitor=False) 
 def gerar_parcela_contemplada(myTimer: func.TimerRequest) -> None:
     # Conectar ao banco de dados MySQL
@@ -44,7 +44,7 @@ def gerar_parcela_contemplada(myTimer: func.TimerRequest) -> None:
     # Fechar a conexão com o banco de dados
     conexao.close() 
 
-@app.schedule(schedule="0 0 */4 * * *", arg_name="myTimer", run_on_startup=True,
+@app.schedule(schedule="0 0 */4 * * *", arg_name="myTimer", run_on_startup=False,
               use_monitor=False)
 def atualizar_contempladas_parceiro(myTimer: func.TimerRequest) -> None:
     engine = create_engine('mysql+pymysql://fragaebitelloc02:NovoProjeto2023@mysql.fragaebitelloconsorcios.com.br/fragaebitelloc02')
