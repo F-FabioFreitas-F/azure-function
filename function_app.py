@@ -61,7 +61,7 @@ def atualizar_contempladas_parceiro(myTimer: func.TimerRequest) -> None:
             replace(replace(replace(FORMAT(valor_credito_original, 2), ".", "x"), ",", "."), "x",",") as valor_credito_original, 
             categoria, 
             replace(replace(replace(FORMAT(entrada, 2), ".", "x"), ",", "."), "x",",") as entrada, 
-            replace(replace(replace(FORMAT(parcelas, 2), ".", "x"), ",", "."), "x",",") as parcelas, 
+            parcelas, 
             replace(replace(replace(FORMAT(valor_parcela, 2), ".", "x"), ",", "."), "x",",") as valor_parcela, 
             administradora, 
             cpf_cnpj as interno,
